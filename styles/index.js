@@ -2,12 +2,11 @@ import { StyleSheet } from "react-native";
 
 export default styles = StyleSheet.create({
   appContainer: {
-    gap: 40,
+    gap: 50,
   },
   bottomRow: {
-    flexDirection: "row",
-    justifyContent: "space-between",
-    width: "65%",
+    justifyContent: "center",
+    alignItems: "center",
   },
   container: {
     flex: 1,

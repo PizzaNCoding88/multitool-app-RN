@@ -7,6 +7,10 @@ export default function RootLayout() {
         name="index"
         options={{ title: "Home", headerShown: false }}
       />
+      <Stack.Screen
+        name="todo"
+        options={{ title: "To-Do", headerShown: false }}
+      />
     </Stack>
   );
 }
