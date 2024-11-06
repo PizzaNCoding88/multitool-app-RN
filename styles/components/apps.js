@@ -12,10 +12,10 @@ export default styles = StyleSheet.create({
     fontWeight: "500",
     fontSize: 16,
     fontFamily: "monospace",
+    textAlign: "center",
   },
   icon: {
     backgroundColor: "#7A96B4",
-    // padding: 20,
     width: 75,
     height: 75,
     borderRadius: 10,

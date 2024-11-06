@@ -8,7 +8,7 @@ export default function Index() {
     <View style={styles.container}>
       <View style={styles.appContainer}>
         <View style={styles.topRow}>
-          <Apps name={"To-do List"} icon={"list"}></Apps>
+          <Apps name={"To-do List"} icon={"list"} path={"/todo"}></Apps>
           <Apps name={"Unit Converter"} icon={"calculator"}></Apps>
         </View>
         <Apps name={"Notes"} icon={"sticky-note"}></Apps>
