@@ -3,8 +3,6 @@ import { View, Text, Pressable, TextInput, Alert } from "react-native";
 import styles from "../styles/todo";
 import { useState } from "react";
 
-import FontAwesome6 from "@expo/vector-icons/FontAwesome6";
-
 import Task from "../components/Task";
 import DeletedTask from "../components/DeletedTask";
 
@@ -12,7 +10,7 @@ import { Keyboard } from "react-native";
 import { TouchableOpacity } from "react-native";
 import { Link } from "expo-router";
 
-export default function HomeScreen() {
+export default function Todo() {
   const [task, setTask] = useState();
   const [taskList, setTaskList] = useState([]);
   const [deletedList, setDeletedList] = useState([]);
@@ -64,8 +62,8 @@ export default function HomeScreen() {
     <>
       <View style={styles.mainContainer}>
         <View style={styles.header}>
-          <Link href="/">
-            <FontAwesome6 name="list" size={24} color="#fff" />
+          <Link href="/deletedTasks">
+            {/* <FontAwesomeIcon icon={faList} style={styles.icon} size={25} /> */}
           </Link>
           <Text style={styles.title}>Your Active Tasks</Text>
         </View>
