@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 import { Link } from "expo-router";
 import React from "react";
 import { Text, View } from "react-native";
@@ -33,15 +32,15 @@ const DeletedTasks = (props) => {
 };
 
 export default DeletedTasks;
-=======
-import React from "react";
-import { Text } from "react-native";
-import styles from "../styles/components/deletedTask";
 
-const DeletedTask = (props) => {
-  const { task } = props;
-  return <Text style={styles.task}>{task}</Text>;
-};
+// import React from "react";
+// import { Text } from "react-native";
+// import styles from "../styles/components/deletedTask";
 
-export default DeletedTask;
->>>>>>> b44eab43f8d30178ba0d1a2f999d514e8e2a7c0e
+// const DeletedTask = (props) => {
+//   const { task } = props;
+//   return <Text style={styles.task}>{task}</Text>;
+// };
+
+// export default DeletedTask;
+// >>>>>>> b44eab43f8d30178ba0d1a2f999d514e8e2a7c0e
