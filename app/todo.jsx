@@ -62,9 +62,6 @@ export default function Todo() {
     <>
       <View style={styles.mainContainer}>
         <View style={styles.header}>
-          <Link href="/deletedTasks">
-            {/* <FontAwesomeIcon icon={faList} style={styles.icon} size={25} /> */}
-          </Link>
           <Text style={styles.title}>Your Active Tasks</Text>
         </View>
         <View style={styles.container}>
@@ -72,7 +69,7 @@ export default function Todo() {
             <View style={styles.tasksList}>
               {taskList.map((task, i) => (
                 <TouchableOpacity key={i} onPress={() => completeTask(i)}>
-                  <Task task={task} />
+                  <Task task={task} complete={completeTask} />
                 </TouchableOpacity>
               ))}
             </View>
@@ -82,7 +79,7 @@ export default function Todo() {
                 <Text style={styles.title}>Deleted Tasks</Text>
                 {deletedList.map((deleted, i) => (
                   <TouchableOpacity key={i} onPress={() => createAlert(i)}>
-                    <DeletedTask task={deleted} />
+                    <DeletedTask task={deleted} deleted={createAlert} />
                   </TouchableOpacity>
                 ))}
               </View>

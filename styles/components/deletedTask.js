@@ -8,6 +8,12 @@ export default styles = StyleSheet.create({
     paddingVertical: 10,
     borderRadius: 20,
     fontSize: 15,
+    flexDirection: "row",
+  },
+  taskText: {
+    fontSize: 17,
+    textAlignVertical: "center",
+    fontWeight: "bold",
     textDecorationLine: "line-through",
   },
 });

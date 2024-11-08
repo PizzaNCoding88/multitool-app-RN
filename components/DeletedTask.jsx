@@ -3,27 +3,26 @@ import React from "react";
 import { Text, View } from "react-native";
 import styles from "../styles/components/deletedTask";
 
-// import { FontAwesomeIcon } from "@fortawesome/react-native-fontawesome";
-// import { faHouse } from "@fortawesome/free-solid-svg-icons";
+import BouncyCheckbox from "react-native-bouncy-checkbox";
 
 const DeletedTasks = (props) => {
-  const { task } = props;
+  const { task, deleted } = props;
   return (
     <>
       <View>
         <View style={styles.header}>
-          <View>
-            <Link href="/">
-              {/* <FontAwesomeIcon
-                icon={faHouse}
-                size={25}
-                style={{ color: "white" }}
-              /> */}
-            </Link>
-          </View>
+          {/* <View>
+            <Link href="/"></Link>
+          </View> */}
 
-          <View>
-            <Text style={styles.task}>{task}</Text>
+          <View style={styles.task}>
+            <BouncyCheckbox
+              onPress={() => {
+                deleted();
+              }}
+              isChecked={true}
+            />
+            <Text style={styles.taskText}>{task}</Text>
           </View>
         </View>
       </View>
@@ -32,15 +31,3 @@ const DeletedTasks = (props) => {
 };
 
 export default DeletedTasks;
-
-// import React from "react";
-// import { Text } from "react-native";
-// import styles from "../styles/components/deletedTask";
-
-// const DeletedTask = (props) => {
-//   const { task } = props;
-//   return <Text style={styles.task}>{task}</Text>;
-// };
-
-// export default DeletedTask;
-// >>>>>>> b44eab43f8d30178ba0d1a2f999d514e8e2a7c0e
