@@ -11,5 +11,10 @@ export default styles = StyleSheet.create({
     flexDirection: "row",
     paddingVertical: 13,
   },
-  taskText: { fontSize: 17, textAlignVertical: "center" },
+  taskText: {
+    fontSize: 15,
+    textAlignVertical: "center",
+    fontFamily: "monospace",
+    fontWeight: "900",
+  },
 });
