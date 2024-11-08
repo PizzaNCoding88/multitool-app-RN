@@ -62,9 +62,6 @@ export default function Todo() {
     <>
       <View style={styles.mainContainer}>
         <View style={styles.header}>
-          <Link href="/deletedTasks">
-            {/* <FontAwesomeIcon icon={faList} style={styles.icon} size={25} /> */}
-          </Link>
           <Text style={styles.title}>Your Active Tasks</Text>
         </View>
         <View style={styles.container}>
