@@ -2,6 +2,7 @@ import { View, Text, Pressable, TextInput, Alert } from "react-native";
 
 import styles from "../styles/todo";
 import { useState } from "react";
+import { StatusBar } from "react-native";
 
 import Task from "../components/Task";
 import DeletedTask from "../components/DeletedTask";

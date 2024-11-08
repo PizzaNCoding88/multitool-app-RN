@@ -6,8 +6,7 @@ export default styles = StyleSheet.create({
   },
   bottomRow: {
     flexDirection: "row",
-    justifyContent: "space-between",
-    width: "65%",
+    justifyContent: "space-evenly",
   },
   container: {
     flex: 1,
@@ -18,6 +17,6 @@ export default styles = StyleSheet.create({
   topRow: {
     flexDirection: "row",
     justifyContent: "space-between",
-    width: "65%",
+    // width: "65%",
   },
 });

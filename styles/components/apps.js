@@ -6,6 +6,7 @@ export default styles = StyleSheet.create({
     justifyContent: "center",
     alignItems: "center",
     gap: 8,
+    width: 150,
   },
   appName: {
     color: "white",

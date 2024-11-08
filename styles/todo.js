@@ -1,4 +1,4 @@
-import { StyleSheet } from "react-native";
+import { StatusBar, StyleSheet } from "react-native";
 
 export default styles = StyleSheet.create({
   addTaskBtn: {
@@ -40,7 +40,7 @@ export default styles = StyleSheet.create({
   mainContainer: {
     flex: 1,
     backgroundColor: "#293742",
-    paddingTop: 50,
+    paddingTop: StatusBar.currentHeight + 20,
     paddingHorizontal: 10,
   },
   tasksContainer: {
@@ -48,6 +48,7 @@ export default styles = StyleSheet.create({
     justifyContent: "space-between",
     paddingVertical: 30,
     flexDirection: "column",
+    alignItems: "center",
   },
   taskInput: {
     flexDirection: "row",
@@ -56,7 +57,10 @@ export default styles = StyleSheet.create({
     marginHorizontal: 10,
     gap: 20,
   },
-  tasksList: { gap: 8 },
+  tasksList: {
+    gap: 8,
+    width: "80%",
+  },
   title: {
     color: "white",
     fontSize: 28,
