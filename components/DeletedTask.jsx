@@ -21,6 +21,8 @@ const DeletedTasks = (props) => {
                 deleted();
               }}
               isChecked={true}
+              fillColor="red"
+              unFillColor="#FFFFFF"
             />
             <Text style={styles.taskText}>{task}</Text>
           </View>

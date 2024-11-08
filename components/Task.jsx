@@ -9,9 +9,11 @@ const Task = (props) => {
     <>
       <View style={styles.task}>
         <BouncyCheckbox
-          onPress={(isChecked) => {
+          onPress={() => {
             complete();
           }}
+          fillColor="green"
+          iconStyle={{ borderWidth: 3 }}
         />
         <Text style={styles.taskText}>{task}</Text>
       </View>
