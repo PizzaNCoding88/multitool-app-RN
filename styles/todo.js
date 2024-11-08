@@ -59,8 +59,9 @@ export default styles = StyleSheet.create({
   tasksList: { gap: 8 },
   title: {
     color: "white",
-    fontSize: 30,
+    fontSize: 28,
     fontWeight: "800",
     textAlign: "center",
+    fontFamily: "monospace",
   },
 });

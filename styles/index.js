@@ -5,8 +5,9 @@ export default styles = StyleSheet.create({
     gap: 50,
   },
   bottomRow: {
-    justifyContent: "center",
-    alignItems: "center",
+    flexDirection: "row",
+    justifyContent: "space-between",
+    width: "65%",
   },
   container: {
     flex: 1,
