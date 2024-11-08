@@ -3,8 +3,6 @@ import { Text, StyleSheet, View } from "react-native";
 import styles from "../styles/components/task";
 import BouncyCheckbox from "react-native-bouncy-checkbox";
 
-// import { useState } from "react";
-
 const Task = (props) => {
   const { task, complete } = props;
   return (
