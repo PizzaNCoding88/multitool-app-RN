@@ -2,14 +2,14 @@ import { View, Text, Pressable, TextInput, Alert } from "react-native";
 
 import styles from "../styles/todo";
 import { useState } from "react";
-import { StatusBar } from "react-native";
 
 import Task from "../components/Task";
 import DeletedTask from "../components/DeletedTask";
 
 import { Keyboard } from "react-native";
 import { TouchableOpacity } from "react-native";
-import { Link } from "expo-router";
+
+import AsyncStorage from "@react-native-async-storage/async-storage";
 
 export default function Todo() {
   const [task, setTask] = useState();
@@ -37,6 +37,15 @@ export default function Todo() {
     ]);
   }
 
+  async function saveDataToAsync(data) {
+    try {
+      await AsyncStorage.setItem("array", JSON.stringify(data));
+      console.log("Object successfully saved");
+    } catch (error) {
+      console.error("Failed to save object to AsyncStorage:", error);
+    }
+  }
+
   function completeTask(i) {
     let taskListCopy = [...taskList];
     let deletedTaskListCopy = [...deletedList];
@@ -44,6 +53,7 @@ export default function Todo() {
     deletedTaskListCopy.push(deletedTask);
     setDeletedList(deletedTaskListCopy);
     setTaskList(taskListCopy);
+    saveDataToAsync(taskListCopy);
   }
 
   function deleteTask(i) {
