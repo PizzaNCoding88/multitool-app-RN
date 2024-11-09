@@ -12,21 +12,17 @@ export default function Todo() {
   const [taskList, setTaskList] = useState([]);
   const [deletedList, setDeletedList] = useState([]);
 
-  // AsyncStorage keys
   const TASK_LIST_KEY = "taskList";
   const DELETED_LIST_KEY = "deletedList";
 
-  // Save array data to AsyncStorage
   const saveArrayToStorage = async (key, array) => {
     try {
       await AsyncStorage.setItem(key, JSON.stringify(array));
-      console.log(`${key} saved to AsyncStorage`);
     } catch (error) {
       console.error(`Error saving ${key} to AsyncStorage:`, error);
     }
   };
 
-  // Load array data from AsyncStorage
   const loadArrayFromStorage = async (key) => {
     try {
       const jsonValue = await AsyncStorage.getItem(key);
@@ -37,7 +33,6 @@ export default function Todo() {
     }
   };
 
-  // Load tasks from AsyncStorage when the component mounts
   useEffect(() => {
     const loadTasks = async () => {
       const storedTaskList = await loadArrayFromStorage(TASK_LIST_KEY);
@@ -48,9 +43,8 @@ export default function Todo() {
     loadTasks();
   }, []);
 
-  // Add a new task
   function addTask() {
-    if (!task) return; // Prevent empty tasks
+    if (!task) return;
     Keyboard.dismiss();
     const updatedTaskList = [...taskList, task];
     setTaskList(updatedTaskList);
@@ -58,7 +52,6 @@ export default function Todo() {
     setTask(null);
   }
 
-  // Complete a task and move it to deleted list
   function completeTask(i) {
     const updatedTaskList = [...taskList];
     const deletedTask = updatedTaskList.splice(i, 1)[0];
@@ -69,7 +62,6 @@ export default function Todo() {
     saveArrayToStorage(DELETED_LIST_KEY, updatedDeletedList);
   }
 
-  // Delete a task from the deleted list
   function deleteTask(i) {
     const updatedDeletedList = [...deletedList];
     updatedDeletedList.splice(i, 1);
@@ -77,7 +69,6 @@ export default function Todo() {
     saveArrayToStorage(DELETED_LIST_KEY, updatedDeletedList);
   }
 
-  // Restore a task from the deleted list to the active task list
   function restoreTask(i) {
     const restoredTask = deletedList.splice(i, 1)[0];
     const updatedTaskList = [...taskList, restoredTask];
@@ -88,7 +79,6 @@ export default function Todo() {
     saveArrayToStorage(DELETED_LIST_KEY, updatedDeletedList);
   }
 
-  // Alert for restore/delete options on deleted tasks
   function createAlert(index) {
     Alert.alert("Would you like to restore or delete the task forever?", "", [
       {
