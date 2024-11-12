@@ -9,14 +9,14 @@ export default styles = StyleSheet.create({
     width: 150,
   },
   appName: {
-    color: "white",
+    color: "#03DAC5",
     fontWeight: "500",
     fontSize: 16,
     fontFamily: "monospace",
     textAlign: "center",
   },
   icon: {
-    backgroundColor: "#7A96B4",
+    backgroundColor: "#03DAC5",
     width: 75,
     height: 75,
     borderRadius: 10,

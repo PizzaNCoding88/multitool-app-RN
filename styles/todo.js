@@ -176,10 +176,7 @@ export default StyleSheet.create({
     flex: 1,
   },
   tasksList: {
-    // backgroundColor: "#1F1B24", // Slightly lighter than main background
-    // padding: 10,
     marginVertical: 8,
-    // Subtle shadow for depth
     shadowColor: "#000",
     shadowOffset: { width: 0, height: 2 },
     shadowOpacity: 0.3,
@@ -207,7 +204,7 @@ export default StyleSheet.create({
     borderRadius: 5,
     paddingHorizontal: 10,
     marginRight: 10,
-    color: "white", // Light grey text for readability
+    color: "#03DAC5", // Light grey text for readability
     fontSize: 16,
   },
   button: {

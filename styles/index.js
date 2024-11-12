@@ -10,13 +10,12 @@ export default styles = StyleSheet.create({
   },
   container: {
     flex: 1,
-    backgroundColor: "#293742",
+    backgroundColor: "#121212",
     justifyContent: "center",
     alignItems: "center",
   },
   topRow: {
     flexDirection: "row",
     justifyContent: "space-between",
-    // width: "65%",
   },
 });
