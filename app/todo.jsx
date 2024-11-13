@@ -95,8 +95,21 @@ export default function Todo() {
   }
 
   function deleteAllTasks() {
-    setDeletedList([]);
-    emptyArray(DELETED_LIST_KEY, []);
+    Alert.alert("Are you sure you want to delete all the tasks?", "", [
+      {
+        text: "Yes",
+        onPress: () => {
+          setDeletedList([]);
+          emptyArray(DELETED_LIST_KEY, []);
+        },
+      },
+      {
+        text: "No",
+        onPress: () => {},
+      },
+    ]);
+    // setDeletedList([]);
+    // emptyArray(DELETED_LIST_KEY, []);
   }
 
   const emptyArray = async (key, array) => {
@@ -104,14 +117,6 @@ export default function Todo() {
       await AsyncStorage.setItem(key, JSON.stringify(array));
     } catch (error) {}
   };
-
-  // const saveArrayToStorage = async (key, array) => {
-  //   try {
-  //     await AsyncStorage.setItem(key, JSON.stringify(array));
-  //   } catch (error) {
-  //     console.error(`Error saving ${key} to AsyncStorage:`, error);
-  //   }
-  // };
 
   return (
     <View style={styles.mainContainer}>
