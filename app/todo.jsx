@@ -108,8 +108,6 @@ export default function Todo() {
         onPress: () => {},
       },
     ]);
-    // setDeletedList([]);
-    // emptyArray(DELETED_LIST_KEY, []);
   }
 
   const emptyArray = async (key, array) => {
