@@ -1,5 +1,5 @@
 import React from "react";
-import { Text, StyleSheet, View } from "react-native";
+import { Text, View } from "react-native";
 import styles from "../styles/components/task";
 import BouncyCheckbox from "react-native-bouncy-checkbox";
 
