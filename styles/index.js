@@ -1,4 +1,5 @@
 import { StyleSheet } from "react-native";
+import { vars } from "../styles/variables";
 
 export default styles = StyleSheet.create({
   appContainer: {
@@ -10,7 +11,7 @@ export default styles = StyleSheet.create({
   },
   container: {
     flex: 1,
-    backgroundColor: "#121212",
+    backgroundColor: vars.colors.backgroundColor,
     justifyContent: "center",
     alignItems: "center",
   },

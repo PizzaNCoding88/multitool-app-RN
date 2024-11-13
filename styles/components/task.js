@@ -1,9 +1,10 @@
 import { StyleSheet } from "react-native";
+import { vars } from "../variables";
 
 export default styles = StyleSheet.create({
   task: {
-    backgroundColor: "#03DAC5",
-    borderColor: "#c2baba",
+    backgroundColor: vars.colors.teal,
+    borderColor: vars.colors.borderColor,
     borderRightWidth: 3,
     borderBottomWidth: 3,
     paddingHorizontal: 10,
@@ -16,7 +17,7 @@ export default styles = StyleSheet.create({
   taskText: {
     fontSize: 15,
     textAlignVertical: "center",
-    fontFamily: "monospace",
+    fontFamily: vars.fonts.mono,
     fontWeight: "900",
   },
 });

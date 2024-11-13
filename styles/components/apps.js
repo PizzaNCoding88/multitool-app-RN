@@ -1,4 +1,5 @@
 import { StyleSheet } from "react-native";
+import { vars } from "../variables";
 
 export default styles = StyleSheet.create({
   app: {
@@ -9,14 +10,14 @@ export default styles = StyleSheet.create({
     width: 150,
   },
   appName: {
-    color: "#03DAC5",
+    color: vars.colors.teal,
     fontWeight: "500",
     fontSize: 16,
     fontFamily: "monospace",
     textAlign: "center",
   },
   icon: {
-    backgroundColor: "#03DAC5",
+    backgroundColor: vars.colors.teal,
     width: 75,
     height: 75,
     borderRadius: 10,
