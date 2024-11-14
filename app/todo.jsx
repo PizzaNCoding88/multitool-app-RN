@@ -7,6 +7,8 @@ import styles from "../styles/todo";
 import Task from "../components/Task";
 import DeletedTask from "../components/DeletedTask";
 
+import FontAwesome6 from "@expo/vector-icons/FontAwesome6";
+
 export default function Todo() {
   const [task, setTask] = useState();
   const [taskList, setTaskList] = useState([]);
@@ -92,6 +94,28 @@ export default function Todo() {
     ]);
   }
 
+  function deleteAllTasks() {
+    Alert.alert("Are you sure you want to delete all the tasks?", "", [
+      {
+        text: "Yes",
+        onPress: () => {
+          setDeletedList([]);
+          emptyArray(DELETED_LIST_KEY, []);
+        },
+      },
+      {
+        text: "No",
+        onPress: () => {},
+      },
+    ]);
+  }
+
+  const emptyArray = async (key, array) => {
+    try {
+      await AsyncStorage.setItem(key, JSON.stringify(array));
+    } catch (error) {}
+  };
+
   return (
     <View style={styles.mainContainer}>
       <View style={styles.header}>
@@ -109,7 +133,12 @@ export default function Todo() {
 
           {deletedList.length > 0 && (
             <View style={styles.tasksList}>
-              <Text style={styles.title}>Deleted Tasks</Text>
+              <View style={styles.deleteTaskRow}>
+                <Text style={styles.title}>Deleted Tasks</Text>
+                <TouchableOpacity onPress={deleteAllTasks}>
+                  <FontAwesome6 name="trash-alt" size={24} color="#03DAC5" />
+                </TouchableOpacity>
+              </View>
               {deletedList.map((deleted, i) => (
                 <TouchableOpacity key={i} onPress={() => createAlert(i)}>
                   <DeletedTask task={deleted} deleted={createAlert} />

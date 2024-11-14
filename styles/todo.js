@@ -1,71 +1,69 @@
-import { StatusBar, StyleSheet } from "react-native";
+import { StyleSheet, StatusBar } from "react-native";
+import { vars } from "./variables.js";
 
-export default styles = StyleSheet.create({
-  addTaskBtn: {
-    color: "black",
-    fontWeight: "600",
-  },
-  button: {
-    width: 40,
-    height: 40,
-    backgroundColor: "white",
-    borderRadius: 150,
-    justifyContent: "center",
-    alignItems: "center",
-    borderWidth: 2,
-    borderColor: "gray",
-  },
-  container: {
-    backgroundColor: "#293742",
-    flex: 1,
-    justifyContent: "space-between",
-    paddingBottom: 10,
-  },
-  header: {
-    flexDirection: "row",
-    justifyContent: "center",
-    alignItems: "center",
-    gap: 20,
-  },
-  icon: {
-    color: "white",
-  },
-  input: {
-    backgroundColor: "white",
-    height: 40,
-    flex: 1,
-    borderRadius: 50,
-    paddingHorizontal: 15,
-  },
+export default StyleSheet.create({
   mainContainer: {
     flex: 1,
-    backgroundColor: "#293742",
+    backgroundColor: vars.colors.backgroundColor,
+    paddingHorizontal: 20,
     paddingTop: StatusBar.currentHeight + 20,
-    paddingHorizontal: 10,
+  },
+  header: {
+    alignItems: "center",
+    marginBottom: 10,
+  },
+  title: {
+    fontSize: 30,
+    fontWeight: "bold",
+    color: vars.colors.teal,
+    marginBottom: 10,
+  },
+  container: {
+    flex: 1,
+    justifyContent: "space-between",
   },
   tasksContainer: {
     flex: 1,
-    justifyContent: "space-between",
-    paddingVertical: 30,
-    flexDirection: "column",
-    alignItems: "center",
+    gap: 40,
+  },
+  tasksList: {
+    marginVertical: 8,
+    gap: 20,
   },
   taskInput: {
     flexDirection: "row",
     alignItems: "center",
+    paddingVertical: 15,
+    backgroundColor: vars.colors.taskInputBg,
+    borderRadius: 8,
+    paddingHorizontal: 10,
+  },
+  input: {
+    flex: 1,
+    height: 40,
+    backgroundColor: vars.colors.inputBg,
+    borderRadius: 5,
+    paddingHorizontal: 10,
+    marginRight: 10,
+    color: vars.colors.teal,
+    fontSize: 16,
+  },
+  button: {
+    backgroundColor: vars.colors.teal,
+    width: 40,
+    height: 40,
+    borderRadius: 20,
+    alignItems: "center",
+    justifyContent: "center",
+  },
+  addTaskBtn: {
+    fontSize: 24,
+    color: vars.colors.black,
+    fontWeight: "bold",
+  },
+  deleteTaskRow: {
+    flexDirection: "row",
+    alignItems: "center",
     justifyContent: "space-between",
-    marginHorizontal: 10,
-    gap: 20,
-  },
-  tasksList: {
-    gap: 8,
-    width: "80%",
-  },
-  title: {
-    color: "white",
-    fontSize: 28,
-    fontWeight: "800",
-    textAlign: "center",
-    fontFamily: "monospace",
   },
 });
