@@ -13,7 +13,7 @@ export default function Index() {
         </View>
         <View style={styles.bottomRow}>
           <Apps name={"Notes"} icon={"sticky-note"}></Apps>
-          <Apps name={"Timer"} icon={"stopwatch"}></Apps>
+          <Apps name={"Timer"} icon={"stopwatch"} path={"/timer"}></Apps>
         </View>
       </View>
     </View>

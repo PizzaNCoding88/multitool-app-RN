@@ -48,6 +48,10 @@ export default function RootLayout() {
         name="todo"
         options={{ title: "To-Do", headerShown: false }}
       />
+      <Stack.Screen
+        name="timer"
+        options={{ title: "Timer", headerShown: false }}
+      />
     </Stack>
   );
 }
