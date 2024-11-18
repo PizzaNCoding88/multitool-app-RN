@@ -8,6 +8,6 @@ export const vars = {
     borderColor: "#c2baba",
   },
   fonts: {
-    mono: "monospace",
+    main: "monospace",
   },
 };

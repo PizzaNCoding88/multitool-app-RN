@@ -84,12 +84,16 @@ export default function Todo() {
   function createAlert(index) {
     Alert.alert("Would you like to restore or delete the task forever?", "", [
       {
+        text: "Delete",
+        onPress: () => deleteTask(index),
+      },
+      {
         text: "Restore",
         onPress: () => restoreTask(index),
       },
       {
-        text: "Delete",
-        onPress: () => deleteTask(index),
+        text: "Return",
+        onPress: () => {},
       },
     ]);
   }

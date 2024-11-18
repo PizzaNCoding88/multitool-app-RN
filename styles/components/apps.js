@@ -13,7 +13,7 @@ export default styles = StyleSheet.create({
     color: vars.colors.teal,
     fontWeight: "500",
     fontSize: 16,
-    fontFamily: "monospace",
+    fontFamily: vars.fonts.main,
     textAlign: "center",
   },
   icon: {

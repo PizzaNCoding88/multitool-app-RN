@@ -17,7 +17,7 @@ export default styles = StyleSheet.create({
   taskText: {
     fontSize: 15,
     textAlignVertical: "center",
-    fontFamily: vars.fonts.mono,
+    fontFamily: vars.fonts.main,
     fontWeight: "900",
   },
 });

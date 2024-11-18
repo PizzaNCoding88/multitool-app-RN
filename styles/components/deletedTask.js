@@ -18,6 +18,6 @@ export default styles = StyleSheet.create({
     textAlignVertical: "center",
     fontWeight: "bold",
     textDecorationLine: "line-through",
-    fontFamily: "monospace",
+    fontFamily: vars.fonts.main,
   },
 });
