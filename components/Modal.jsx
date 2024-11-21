@@ -1,3 +1,5 @@
+//modal styling
+
 import { View, TextInput, Pressable, Text } from "react-native";
 import React, { useState } from "react";
 
