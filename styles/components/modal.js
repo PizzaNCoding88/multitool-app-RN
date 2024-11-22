@@ -9,10 +9,13 @@ export default styles = StyleSheet.create({
     fontWeight: "bold",
   },
   container: {
-    flex: 1,
     justifyContent: "center",
     gap: 35,
     zIndex: 2,
+    backgroundColor: vars.colors.backgroundColor,
+    width: "80%",
+    height: "40%",
+    padding: 15,
   },
   selectorContainer: {
     gap: 20,
@@ -32,7 +35,7 @@ export default styles = StyleSheet.create({
     bottom: 0,
     left: 0,
     right: 0,
-    backgroundColor: "blue",
+    backgroundColor: "#383535",
   },
   timeInput: {
     borderColor: vars.colors.teal,
