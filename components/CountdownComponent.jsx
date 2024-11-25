@@ -30,7 +30,9 @@ export default function CountdownComponent({ mins, secs }) {
     hours: 0,
     minutes: mins,
     seconds: secs,
-    onComplete: () => console.log("Finished!"),
+    onComplete: () => {
+      console.log("Finished!");
+    },
   });
 
   const startTimer = () => {
