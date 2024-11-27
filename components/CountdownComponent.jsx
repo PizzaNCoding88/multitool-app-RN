@@ -49,7 +49,6 @@ export default function CountdownComponent({
     minutes: mins,
     seconds: secs,
     onComplete: () => {
-      console.log("Finished!");
       playSound();
     },
   });
