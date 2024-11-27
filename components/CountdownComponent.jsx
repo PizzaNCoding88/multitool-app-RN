@@ -1,18 +1,44 @@
 //add sound reproduction when timer is up
 
 import { Text, Alert, Pressable, View } from "react-native";
+import { useState, useEffect } from "react";
 import { useCountdown } from "rn-countdown-manager";
 import { Countdown } from "rn-countdown-manager";
+import { Audio } from "expo-av";
+// import { useAudioPlayer } from "expo-audio";
 
-import {
-  CustomBlocksType, // component custom assets
-  ZERO_TO_FIFTY_NINE, // used on minutes and seconds
-  ZERO_TO_NINETY_NINE, // used on hours
-  UseCountdownProps, // timer hook props
-  UseCountdownReturn, // timer hook return
-} from "rn-countdown-manager";
+// import {
+//   CustomBlocksType, // component custom assets
+//   ZERO_TO_FIFTY_NINE, // used on minutes and seconds
+//   ZERO_TO_NINETY_NINE, // used on hours
+//   UseCountdownProps, // timer hook props
+//   UseCountdownReturn, // timer hook return
+// } from "rn-countdown-manager";
 
 export default function CountdownComponent({ mins, secs }) {
+  // const player = useAudioPlayer(
+  //   require("../android/app/src/main/res/raw/audio.mp3")
+  // );
+  const [sound, setSound] = useState();
+
+  async function playSound() {
+    const { sound } = await Audio.Sound.createAsync(
+      require("../android/app/src/main/res/raw/audio.mp3")
+    );
+    setSound(sound);
+
+    await sound.playAsync();
+  }
+
+  useEffect(() => {
+    return sound
+      ? () => {
+          playSound();
+          Alert.prompt("complete");
+        }
+      : undefined;
+  }, [sound]);
+
   const {
     isRunning,
     isPaused,
@@ -32,6 +58,7 @@ export default function CountdownComponent({ mins, secs }) {
     seconds: secs,
     onComplete: () => {
       console.log("Finished!");
+      playSound();
     },
   });
 
