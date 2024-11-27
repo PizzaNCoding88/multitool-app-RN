@@ -67,7 +67,15 @@ export default function Timer() {
         />
       )}
       <Text>
-        {showCountdown && <CountdownComponent mins={minutes} secs={seconds} />}
+        {showCountdown && (
+          <CountdownComponent
+            mins={minutes}
+            secs={seconds}
+            showModal={setShowModal}
+            handleData={handleData}
+            showCountdown={setShowCountdown}
+          />
+        )}
       </Text>
     </View>
   );

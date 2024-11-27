@@ -1,24 +1,16 @@
-//add sound reproduction when timer is up
-
 import { Text, Alert, Pressable, View } from "react-native";
 import { useState, useEffect } from "react";
 import { useCountdown } from "rn-countdown-manager";
 import { Countdown } from "rn-countdown-manager";
 import { Audio } from "expo-av";
-// import { useAudioPlayer } from "expo-audio";
 
-// import {
-//   CustomBlocksType, // component custom assets
-//   ZERO_TO_FIFTY_NINE, // used on minutes and seconds
-//   ZERO_TO_NINETY_NINE, // used on hours
-//   UseCountdownProps, // timer hook props
-//   UseCountdownReturn, // timer hook return
-// } from "rn-countdown-manager";
-
-export default function CountdownComponent({ mins, secs }) {
-  // const player = useAudioPlayer(
-  //   require("../android/app/src/main/res/raw/audio.mp3")
-  // );
+export default function CountdownComponent({
+  mins,
+  secs,
+  showModal,
+  handleData,
+  showCountdown,
+}) {
   const [sound, setSound] = useState();
 
   async function playSound() {
@@ -72,6 +64,12 @@ export default function CountdownComponent({ mins, secs }) {
     }
   };
 
+  const submit = () => {
+    showModal(true);
+    handleData();
+    showCountdown();
+  };
+
   return (
     <>
       <View style={{ gap: 50 }}>
@@ -79,13 +77,13 @@ export default function CountdownComponent({ mins, secs }) {
           hours={hours}
           minutes={minutes}
           seconds={seconds}
-          showHours={true}
+          showHours={false}
           showMinutes={true}
           color="#03DAC5"
           // offColor="#03DAC5" // cell color when off (defaults to transparent)
           size="lg"
           // customBlocks={customBlockAssetsJson} // custom SVGs can be used in cells
-          // CustomSeparator={() => <Text> - </Text>} // custom separator for HH:MM:SS, accepts any React.FC
+          // CustomSeparator={() => <Text> : : :</Text>} // custom separator for HH:MM:SS, accepts any React.FC
         />
         <View style={{ alignItems: "center" }}>
           <Pressable
@@ -104,9 +102,9 @@ export default function CountdownComponent({ mins, secs }) {
             </Text>
           </Pressable>
         </View>
-        {/* <View style={{ alignItems: "center" }}>
+        <View style={{ alignItems: "center" }}>
           <Pressable
-            onPress={() => reset()}
+            onPress={() => submit()}
             style={{
               borderColor: "white",
               borderWidth: 2,
@@ -120,7 +118,7 @@ export default function CountdownComponent({ mins, secs }) {
               Reset Timer
             </Text>
           </Pressable>
-        </View> */}
+        </View>
       </View>
     </>
   );
