@@ -128,6 +128,12 @@ export default function Todo() {
       <View style={styles.container}>
         <View style={styles.tasksContainer}>
           <View style={styles.tasksList}>
+            {/* {taskList.map((task, i) => (
+              <TouchableOpacity key={i} onPress={() => completeTask(i)}>
+                <Task task={task} complete={completeTask} />
+              </TouchableOpacity>
+            ))} */}
+
             {taskList.map((task, i) => (
               <TouchableOpacity key={i} onPress={() => completeTask(i)}>
                 <Task task={task} complete={completeTask} />
